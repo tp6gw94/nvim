@@ -18,6 +18,13 @@ return {
 					["\\"] = "open_vsplit",
 					["o"] = "open",
 					["t"] = false,
+        ["oc"] = false,
+        ["od"] = false,
+        ["og"] = false,
+        ["om"] = false,
+        ["on"] = false,
+        ["os"] = false,
+        ["ot"] = false,
 				},
 			},
 			filesystem = {
