@@ -64,7 +64,7 @@ return {
 	{
 		"creativenull/efmls-configs-nvim",
 		tag = "v1.7.0", -- tag is optional, but recommended
-		requires = { "neovim/nvim-lspconfig" },
+		dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			local eslint = require("efmls-configs.linters.eslint")
 			local prettier = require("efmls-configs.formatters.prettier")
