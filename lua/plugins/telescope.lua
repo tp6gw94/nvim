@@ -10,27 +10,35 @@ return {
 			local telescope = require("telescope")
 			telescope.load_extension("frecency")
 
-      local actions = require("telescope.actions")
+			local actions = require("telescope.actions")
 			telescope.setup({
 				defaults = {
-          mappings = {
-            ["i"] = {
-              ["<C-c>"] = false,
-              ["<ESC>"] = actions.close,
-            }
-          }
-        },
+					mappings = {
+						["i"] = {
+							["<C-c>"] = false,
+							["<ESC>"] = actions.close,
+						},
+					},
+				},
 			})
 
-			local builtin = require("telescope.builtin")
-
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>lg", builtin.live_grep, {})
-			vim.keymap.set(
-				"n",
-				"<leader>fr",
-				':Telescope frecency workspace=CWD path_display={"shorten"} theme=ivy<CR>'
-			)
 		end,
+		keys = {
+			{
+				"<leader>ff",
+				"<cmd>Telescope find_files<cr>",
+				desc = "find files",
+			},
+			{
+				"<leader>lg",
+				"<cmd>Telescope live_grep<cr>",
+				desc = "live grep",
+			},
+			{
+				"<leader>fr",
+				'<cmd>Telescope Telescope frecency workspace=CWD path_display={"shorten"} theme=ivy<cr>',
+				desc = "recent",
+			},
+		},
 	},
 }
