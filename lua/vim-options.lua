@@ -5,12 +5,13 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set relativenumber")
 vim.cmd("set ignorecase smartcase")
+vim.cmd("set signcolumn=yes:1")
 vim.g.mapleader = " "
 
-vim.keymap.set('n', "j", "gj", {remap = true})
-vim.keymap.set('n', "k", "gk", {remap= true})
+vim.keymap.set('n', "j", "gj", { remap = true })
+vim.keymap.set('n', "k", "gk", { remap = true })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", {
-	remap = true,
+  remap = true,
 })
-vim.keymap.set("n", "<leader>\\", ":vsplit<CR>")
-vim.keymap.set("n", "<leader>-", ":split<CR>")
+vim.keymap.set("n", "<leader>v\\", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>v-", ":split<CR>")
