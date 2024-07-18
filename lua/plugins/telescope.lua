@@ -36,7 +36,7 @@ return {
 			},
 			{
 				"<leader>fr",
-				'<cmd>Telescope Telescope frecency workspace=CWD path_display={"shorten"} theme=ivy<cr>',
+				'<cmd>Telescope frecency workspace=CWD path_display={"shorten"} theme=ivy<cr>',
 				desc = "recent",
 			},
 		},
