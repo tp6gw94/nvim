@@ -32,5 +32,6 @@
   "telescope-frecency.nvim": { "branch": "master", "commit": "880e89eadbc92e9da27c85dce0b9535dcef9b057" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "trouble.nvim": { "branch": "main", "commit": "bf99ea71a39e322336b7f8be965f86dbf5c65540" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "f8c2e0b36b651c85f52ad5c5373ff8b07adc15a7" },
   "which-key.nvim": { "branch": "main", "commit": "30cf839c82bcc0f90be951f8834c256c1cdc295c" }
 }

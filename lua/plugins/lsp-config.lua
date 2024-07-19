@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "dockerls", "graphql", "jsonls", "tsserver", "efm" },
+        ensure_installed = { "lua_ls", "dockerls", "graphql", "tsserver", "efm" },
       })
     end,
   },
@@ -48,10 +48,6 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         settings = {
@@ -88,6 +84,19 @@ return {
     },
   },
   {
+    {
+      "pmizio/typescript-tools.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+      opts = {
+        settings = {
+          tsserver_file_preferences = {
+            includeInlayParameterNameHints = true
+          }
+        }
+      },
+    }
+  },
+  {
     "nvimdev/guard.nvim",
     dependencies = {
       "nvimdev/guard-collection",
@@ -105,4 +114,5 @@ return {
       })
     end,
   },
+
 }
