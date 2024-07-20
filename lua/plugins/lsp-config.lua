@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "dockerls", "graphql", "tsserver", "efm" },
+        ensure_installed = { "lua_ls", "dockerls", "graphql", "tsserver", "jsonls" },
       })
     end,
   },
@@ -47,6 +47,10 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      lspconfig.jsonls.setup({
+        capabilities = capabilities,
+      })
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -90,11 +94,11 @@ return {
       opts = {
         settings = {
           tsserver_file_preferences = {
-            includeInlayParameterNameHints = true
-          }
-        }
+            includeInlayParameterNameHints = true,
+          },
+        },
       },
-    }
+    },
   },
   {
     "nvimdev/guard.nvim",
@@ -105,6 +109,11 @@ return {
       local ft = require("guard.filetype")
 
       ft("*"):lint("codespell")
+      ft("json"):fmt({
+        cmd = "jq",
+        args = { "." },
+        stdin = true
+      })
       ft("lua"):fmt("lsp"):append("stylua")
       ft("typescript,javascript,typescriptreact,javascriptreact"):fmt("prettier"):lint("eslint"):lint("stylelint")
 
@@ -114,5 +123,4 @@ return {
       })
     end,
   },
-
 }
